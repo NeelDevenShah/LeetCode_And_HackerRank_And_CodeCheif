@@ -1,0 +1,38 @@
+public class PowXN {
+	public static void main(String [] args)
+	{
+		System.out.println(myPow(2, -2));
+	}
+	
+	public static double myPow(double x, int n)
+	{
+		
+		if(x==0)
+		{
+			return 0;
+		}
+		else if(x==1)
+		{
+			return 1;
+		}
+		
+		double temp=1;
+		if(n>0)
+		{
+			for(int i=0;i<n;i++)
+			{
+				temp=temp*x;
+			}
+		}
+		else if(n<0) {
+			for(int i=0;i<Math.abs(n);i++)
+			{
+				temp=temp/x;
+			}
+		}
+		else {
+			return 1.0000;
+		}
+		return temp;
+	}
+}

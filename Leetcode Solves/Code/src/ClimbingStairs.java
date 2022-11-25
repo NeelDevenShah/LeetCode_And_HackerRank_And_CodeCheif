@@ -1,0 +1,48 @@
+import java.util.Arrays;
+
+public class ClimbingStairs {
+	public static void main(String [] args) {
+		System.out.println(climbStairs(3));
+	}
+	
+	//DP(Dynamic Programming (memoization))
+	public static int climbStairs(int n) {
+		 int cache[]=new int[46];
+		 Arrays.fill(cache, -1);
+		 return climbStair(n, cache);
+	}
+	
+	public static int climbStair(int n, int[] cache) {
+		if(n==0)
+		{
+			return 0;
+		}
+		else if(n==1) {
+			return 1;
+		}
+		else if(n==2) {
+			return 2;
+		}
+		else if(cache[n]==-1) {
+			return cache[n]=climbStair(n-1, cache)+climbStair(n-2, cache);
+		}
+		else {
+			return cache[n];
+		}
+	}
+	
+	//Simple Recursion
+//	public static int climbStairs(int n) {
+//		if(n==0) {
+//			return 0;
+//		}
+//		if(n==1) {
+//			return 1;
+//		}
+//		if(n==2) {
+//			return 2;
+//		}
+//		return climbStairs(n-1) + climbStairs(n-2);
+//	}
+	
+}

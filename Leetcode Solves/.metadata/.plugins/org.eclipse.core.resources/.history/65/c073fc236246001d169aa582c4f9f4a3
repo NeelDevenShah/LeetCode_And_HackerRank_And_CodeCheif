@@ -1,0 +1,43 @@
+public class MaximumSubarray {
+	public static void main(String [] args)
+	{
+		int nums[]=new int[]{-2,1,-3,4,-1,2,1,-5,4};
+		System.out.println(maxSubArray(nums));
+	}
+	
+	public static int maxSubArray(int[] nums)
+	{
+		if(nums.length==0)
+		{
+			return 0;
+		}
+		else if(nums.length==1)
+		{
+			return nums[0];
+		}
+		
+		int max=Integer.MIN_VALUE;
+		for(int n=1;n<nums.length;n++)
+		{
+			for(int i=0;i<nums.length;i++)
+			{
+				int tempSum=0;
+				for(int j=i;j<=(n+i);j++)
+				{	
+					if(j+n<=nums.length)
+					{
+						System.out.println(j);
+						tempSum+=nums[j];
+					}
+					
+				}
+				System.out.println("*"+tempSum);
+				if(tempSum>max)
+				{
+					max=tempSum;
+				}
+			}
+		}
+		return max;
+	}
+}

@@ -1,0 +1,27 @@
+public class NextPermutation {
+	//There Are Two Method To Solve This Problem
+	//1.(Not Preferred) By Listing All Permutation lexicographically wise and than select the next one to the given one
+	//2.(Preferred) By Using Algorith Of Permutation
+		//Algorithm Is As Shown Below:
+		//Step 1: Find First Decreasing Sequence Starting From End
+		//Step 2: Find Number For Substitution And Perform Swap
+		//Step 3: Rearrange Remaining Array By Reversing It
+	
+	public static void main(String [] args)
+	{
+		
+	}
+	
+	public void nextPermutation(int A[])
+	{
+		if(A==null || A.length<=1)
+		{
+			return;
+		}
+		int i=A.length-2;
+		while(i>=0 && A[i]>A[i+1])
+		{
+			
+		}
+	}
+}

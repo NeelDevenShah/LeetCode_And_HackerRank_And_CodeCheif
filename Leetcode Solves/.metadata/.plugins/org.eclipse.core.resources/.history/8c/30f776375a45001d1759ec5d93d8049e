@@ -1,0 +1,36 @@
+public class PowXN1 {
+	//There Are Two Solutions To This Problem
+		//1. Brut Force (This One) (Not Passing 3 Test Cases)
+		//2. Binary Exponention Approach (Another File With This Name, having 1 on end)
+	public static void main(String [] args)
+	{
+		System.out.println(myPow(-1.00001, 447125));
+	}
+	
+	public static double myPow(double x, int n)
+	{
+		double ans=1.0;
+		double nn=n;
+		if(x<0)
+		{
+			nn=-1*nn;
+		}
+		while(nn>0)
+		{
+			if(nn%2==1)
+			{
+				ans=ans*x;
+				nn=nn-1;
+			}
+			else {
+				x=x*x;
+				nn=nn/2;
+			}
+		}
+		if(n<0)
+		{
+			ans=(double)1.0/ans;
+		}
+		return ans;
+	}
+}

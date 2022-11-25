@@ -1,0 +1,31 @@
+import java.util.List;
+/*
+ * Rules Of N-Queens In Chess board
+ * 	1. Every row should have one Queen
+ * 	2. Every column should have one Queen
+ * 	3. No two queens can attack Each Other
+ * 
+ * 	=>Queen Can Attack In Eight Directions
+ *		  \ | /		
+ * 		  - Q -
+ * 		  / | \
+ * 
+ * ==>The Above Problem Can Be Solved By Two Ways:
+ * 	1. Using concept of Backtracking, We will place Queen at different positions of the chess board and find the right arrangement where all the n queens can be placed on the n*n grid
+ * 		//And In backtracking, After adding element and making it to call the function again, than we have to remove that added element and than make add the another possibility to be 
+ * 		checked, So that if the first one is not possible, than the second one can be made
+ * 	2. Optimization of the upper method, We need O(N) for row, O(N) for column, and O(N) for diagonal.Here we will use hashing to maintain a list to check whether that position can be
+ * 	   the right one or not
+ */
+public class NQueens {
+	public static void main(String [] args)
+	{
+		
+	}
+	
+	public List<List<String>> solveNQueens(int n)
+	{
+		
+	}
+	
+}

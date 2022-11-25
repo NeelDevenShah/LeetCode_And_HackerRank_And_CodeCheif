@@ -1,0 +1,18 @@
+public class PowXN {
+	public static void main(String [] args)
+	{
+		System.out.println(myPow(2.0000, 10));
+	}
+	
+	public static double myPow(double x, int n)
+	{
+		if(n==1)
+        {
+            return x*1;
+        }
+        else{
+            double temp=x*n;
+            return myPow(temp, n-1);
+        }
+	}
+}

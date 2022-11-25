@@ -1,0 +1,20 @@
+public class ClimbingStairs {
+	public static void main(String [] args) {
+		System.out.println(climbStair(3));
+	}
+	
+	public static int climbStair(int n) {
+		if(n==0) {
+			return 0;
+		}
+		if(n==1) {
+			return 1;
+		}
+		if(n==2) {
+			return 2;
+		}
+		
+		return climbStair(n-1) + climbStair(n-2);
+	}
+	
+}

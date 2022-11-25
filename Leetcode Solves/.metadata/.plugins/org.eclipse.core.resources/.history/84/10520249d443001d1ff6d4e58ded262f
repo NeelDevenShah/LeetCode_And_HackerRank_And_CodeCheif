@@ -1,0 +1,35 @@
+import java.text.CollationElementIterator;
+
+public class CountAndSay {
+	public static void main(String [] args)
+	{
+		System.out.println(sol(4));
+	}
+	
+	public static String sol(int num)
+	{
+		if(num==1) return "1";
+		if(num==2) return "11";
+		String solution="11";
+		for(int i=3;i<=num;i++)
+		{
+			String temp="";
+			int counter=1;
+			for(int j=1;j<solution.length();j++)
+			{
+				System.out.println("2");
+				if(solution.charAt(j)!=solution.charAt(j-1))
+				{
+					temp+=counter;
+					temp+=solution.charAt(j-1);
+					counter=1;
+				}
+				else {
+					counter++;
+				}
+			}
+			solution=temp;
+		}
+		return solution;
+	}
+}

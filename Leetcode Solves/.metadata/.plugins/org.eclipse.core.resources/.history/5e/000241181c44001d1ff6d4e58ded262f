@@ -1,0 +1,48 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+
+public class CombinationSum2 {
+	public static void main(String [] args)
+	{
+		int arr[]=new int[] {10,1,2,7,6,1,5};
+		int target=8;
+		System.out.println(combinationSum2(arr, target));
+	}
+	
+	public static List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> ans = new ArrayList<>();
+        LinkedList<Integer> tempList = new LinkedList<>();
+
+        Arrays.sort(candidates);
+
+        backtrack(candidates, tempList, target, 0, ans);
+        return ans;
+    }
+
+    private static void backtrack(int[] candidates, LinkedList<Integer> tempList, int remain, int curr, List<List<Integer>> ans) {
+        if (remain == 0) 
+        {
+            // copy the current combination to the final list.
+        	if(!ans.contains(tempList))
+        	{
+        		ans.add(new ArrayList<Integer>(tempList));
+        	}
+        	
+        	return;
+        }
+
+        for (int nextCurr=curr;nextCurr<candidates.length;nextCurr++)
+        {
+            int pick = candidates[nextCurr];
+            // optimization: early stopping
+            if (remain-pick<0)
+                break;
+
+            tempList.addLast(pick);
+            backtrack(candidates, tempList, remain - pick, nextCurr + 1, ans);
+            tempList.removeLast();
+        }
+    }
+}

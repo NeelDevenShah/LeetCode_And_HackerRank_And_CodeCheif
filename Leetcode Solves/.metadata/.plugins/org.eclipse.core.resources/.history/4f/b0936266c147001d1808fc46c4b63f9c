@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Subsets1 {
+	public static void main(String [] args) {
+		int arr[]=new int[]{1,2,3};
+		ArrayList<ArrayList<Integer>> ans=subsets(arr);
+		System.out.println(ans.get(0).size());
+//		for(int i=0;i<ans.get(0).size();i++) {
+//			ans.get(0).get(i);
+//		}
+	}
+	
+	public static ArrayList<ArrayList<Integer>> subsets(int[] nums){
+		ArrayList<ArrayList<Integer>> ans=new ArrayList<>();
+		recursionFun(0, nums, ans, new ArrayList<Integer>());
+		return ans;
+	}
+	
+	public static void recursionFun(int idx, int[] nums, ArrayList<ArrayList<Integer>> ans, ArrayList<Integer> subAns){
+		if(idx==(nums.length-1)) {
+			ans.add(subAns);
+			return;
+		}
+		subAns.add(nums[idx]);
+		recursionFun(idx+1, nums, ans, subAns);
+//		subAns.remove(idx);
+		recursionFun(idx+1, nums, ans, subAns);
+	}
+	
+}

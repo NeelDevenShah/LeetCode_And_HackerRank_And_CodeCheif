@@ -1,0 +1,36 @@
+import java.util.Stack;
+
+public class ValidParentheses {
+	public static void main(String [] args)
+	{
+		String s="()";
+		System.out.println(isValid(s));
+	}
+	
+	public static boolean isValid(String s)
+	{
+		for(int i=0;i<s.length();i++)
+        {
+            Stack<Character> stack=new Stack<>();
+            if(s.charAt(i)=='(' || s.charAt(i)=='{' || s.charAt(i)=='[')
+            {
+                System.out.println("1");
+            	stack.add(s.charAt(i));
+            }
+            else if(s.charAt(i)==')' || s.charAt(i)=='}' || s.charAt(i)==']'){
+            	System.out.println("2");
+            	System.out.println("Done");
+//            	char poped=stack.pop();
+            	char poped=')';
+            	if(s.charAt(i)!=poped)
+            	{
+            		return false;
+            	}
+            }
+            else{
+                return false;
+            }
+        }
+		return true;
+	}
+}

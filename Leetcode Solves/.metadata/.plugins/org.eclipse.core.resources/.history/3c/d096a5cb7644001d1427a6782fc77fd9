@@ -1,0 +1,32 @@
+import java.util.Arrays;
+
+public class TrappingRainWater {
+	public static void main(String [] args)
+	{
+		int arr[]=new int[] {4,2,0,3,2,5};
+		System.out.println(trap(arr));
+	}
+	//-1 For Barrier And -2 For Water And We Have To Count The Water's Unit	
+	public static int trap(int[] height)
+	{
+		int sortedTemp[]=height;
+		Arrays.sort(sortedTemp);
+		int graphArea[][]=new int[height.length][sortedTemp[sortedTemp.length-1]];
+		for(int i=0;i<height.length;i++)
+		{
+			for(int j=0;j<height[i];j++)
+			{
+				graphArea[i][j]=0;
+			}
+		}
+		for(int i=0;i<height.length;i++)
+		{
+			for(int j=0;j<height[i];j++)
+			{
+				System.out.print(graphArea[i][j]);
+			}
+			System.out.println("");
+		}
+		return -1;
+	}
+}

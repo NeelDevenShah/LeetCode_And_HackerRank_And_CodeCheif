@@ -1,0 +1,33 @@
+public class UniquePaths {
+	//In This Program, We have Make an 2d matrix and in it we have marked the position where we want to go as -1, And 
+	public static void main(String [] args) {
+		System.out.println(uniquePath(1, 2));
+	}
+	
+	public static int uniquePath(int m, int n) {
+		
+		if(m==1 || n==1) {
+			return 1;
+		}
+		
+		int arr[][]=new int[m][n];
+		arr[m-1][n-1]=-1;
+//		arr[m-1][n-2]=1;
+//		arr[m-2][n-1]=1;
+		
+		for(int i=0;i<m;i++) {
+			arr[i][n-1]=1;
+		}
+		for(int j=0;j<n;j++) {
+			arr[m-1][j]=1;
+		}
+		
+		for(int i=(m-2);i>=0;i--)
+		{
+			for(int j=(n-2);j>=0;j--){
+				arr[i][j]=arr[i][j+1]+arr[i+1][j];
+			}
+		}
+		return arr[0][0];
+	}
+}
